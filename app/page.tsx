@@ -3,10 +3,11 @@ import { Nav } from "./nav/page";
 import { CategoriesGrid } from "./product-categories/page";
 import { ProductGrid, products } from "./products/page";
 import { CarouselDemo } from "./slider/page";
+import { StickyNav } from "./stickyNav/page";
 
 export default function Home() {
   return (
-    <div className="   ">
+    <div>
       <Nav />
 
       <div className="p-4">
@@ -44,6 +45,8 @@ export default function Home() {
           <ProductGrid products={products} />
         </section>
       </div>
+
+      <StickyNav />
     </div>
   );
 }

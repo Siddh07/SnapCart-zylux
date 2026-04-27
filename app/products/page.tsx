@@ -2,8 +2,6 @@ import { ShoppingBag, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-
-
 interface Product {
   name: string;
   price: number;
@@ -38,6 +36,32 @@ export const products: Product[] = [
     slug: "fresh-bananas",
     rating: 3.7,
     sold: 24,
+
+  },
+
+  {
+    name: "Dark Chocolate Bar",
+    price: 2.99,
+    originalPrice: 4.99,
+    discount: 40,
+    image: "/test.jpg",
+    category: "Fruits & Vegetables",
+    slug: "dark-chocolate-bar",
+    rating: 3.7,
+    sold: 24,
+  },
+
+
+  {
+    name: "Mixed Nuts Premium",
+    price: 2.99,
+    originalPrice: 4.99,
+    discount: 40,
+    image: "/test.jpg",
+    category: "Fruits & Vegetables",
+    slug: "mixed-nuts-premium",
+    rating: 3.7,
+    sold: 24,
   },
 ];
 
@@ -65,7 +89,7 @@ export function ProductCard({ product }: { product: Product }) {
         />
       )}
 
-      <span className="text-[13]px font-normal text-[#1A1A1A] group-hover:text-red-500 mr-auto" >
+      <span className="text-[13]px font-normal text-[#1A1A1A] group-hover:text-red-500 mr-auto">
         {product.name}
       </span>
 
@@ -80,19 +104,17 @@ export function ProductCard({ product }: { product: Product }) {
           </span>
         </div>
 
-
-<div className="bg-[#ce4002] rounded-full  text-white p-1 hover:scale-110 ">
-        <ShoppingBag   />
+        <div className="bg-[#ce4002] rounded-full  text-white p-1 hover:scale-110 ">
+          <ShoppingBag />
         </div>
       </div>
 
       {product.rating && (
         <div className="mt-1 flex items-center gap-1 text-xs text-gray-500 mr-auto">
-   <Star size={12} fill="#f59e0b" color="#f59e0b" /> 
-        <span>{product.rating.toFixed(1)}</span>
+          <Star size={12} fill="#f59e0b" color="#f59e0b" />
+          <span>{product.rating.toFixed(1)}</span>
           <span>({product.sold} sold) </span>
-          
-          </div>
+        </div>
       )}
     </Link>
   );
@@ -100,7 +122,7 @@ export function ProductCard({ product }: { product: Product }) {
 
 export function ProductGrid({ products }: { products: Product[] }) {
   return (
-    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 ">
+    <div className="grid grid-cols-2 gap-4 ">
       {products.map((product) => (
         <ProductCard key={product.slug} product={product} />
       ))}

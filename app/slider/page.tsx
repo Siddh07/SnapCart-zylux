@@ -45,10 +45,10 @@ export function CarouselDemo() {
        
                 <CardContent className="flex items-center   relative h-[300px] rounded-2xl overflow-hidden      "> 
                <Image src={slide.image} alt={`Slide ${index + 1}`} fill className=" object-cover rounded-md" />
-                <div className="  pl-8 pt-40   absolute top-0 left-0 w-full h-full flex flex-col   text-white">
+                <div className="  pl-8 pt-25   absolute top-0 left-0 w-full h-full flex flex-col   text-white">
                   <h1 className="text-2xl font-bold">{slide.texth1}</h1>
                   <p className="text-lg mt-2">{slide.texth2}</p>
-                  <button className="mt-4 px-4 py-2 bg-[#ce4002] text-white rounded hover:transition-transform hover:scale-105 w-fit">
+                  <button className="mt-2 px-4 py-2 bg-[#ce4002] text-white rounded hover:transition-transform hover:scale-105 w-fit">
                     Shop Now
                   </button>
                 </div>
