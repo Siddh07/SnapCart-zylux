@@ -20,7 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${roboto.variable} antialiased`}>
 <body className="min-h-screen flex flex-col">
-  <main className="mx-auto w-full max-w-2xl bg-[#f5f5f5] min-h-screen relative flex flex-col">
+  <main className="mx-auto w-full max-w-[490px] bg-[#f5f5f5] min-h-screen relative flex flex-col">
     {children}
   </main>
 </body>

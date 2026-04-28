@@ -1,13 +1,17 @@
 import { ChevronRight } from "lucide-react";
+import { LatestArticles } from "./article/page";
+import Brand from "./brands/page";
 import { Nav } from "./nav/page";
 import { CategoriesGrid } from "./product-categories/page";
 import { ProductGrid, products } from "./products/page";
+import { CarouselPlugin } from './review/page';
 import { CarouselDemo } from "./slider/page";
 import { StickyNav } from "./stickyNav/page";
 
+
 export default function Home() {
   return (
-    <div>
+    <div className="relative min-h-screen">
       <Nav />
 
       <div className="p-4">
@@ -44,9 +48,19 @@ export default function Home() {
           <div className="h-4" />
           <ProductGrid products={products} />
         </section>
+
+
+  <Brand />
+  <CarouselPlugin />
+
+<LatestArticles />
+
+
       </div>
 
+    
       <StickyNav />
+
     </div>
   );
 }

@@ -12,29 +12,31 @@ export function Nav() {
             className="border-grey-100 border-5 rounded-lg inline-flex ml-8
      mb-2"
           >
-            <Image src={logo} alt="SnapCart Logo" width={50} height={40} />
+            <Image src={logo} alt="SnapCart Logo" width={80} height={80} />
           </div>
         </div>
       </div>
 
-      <div className=" flex flex-col items-start   ml-30 -mt-17">
-        <span className="text-lg font-extrabold text-[#1A1A1A] ">
+      <div className=" flex flex-col items-start   ml-35 -mt-24 mb-3 ">
+        <span className="text-lg font-extrabold text-[#1A1A1A]  ">
           SnapCart - Fresh Groceries Delivered
         </span>
-        <span className="text-sm text-gray-600">
+        <span className="text-sm text-black-600">
           Fresh groceries delivered nationwide
         </span>
-        <div className="flex flex-row items-center gap-1 text-xs pt-2 text-gray-500">
-          <Star size={12} fill="#f59e0b" color="#f59e0b" />
-          <Star size={12} fill="#f59e0b" color="#f59e0b" />
-          <Star size={12} fill="#f59e0b" color="#f59e0b" />
-          <Star size={12} fill="#f59e0b" color="#f59e0b" />
-          <Star size={12} fill="#f59e0b" color="#f59e0b" />
+        <div className="flex flex-row items-center gap-1 text-sm pt-2 text-[#b45309] ">
+          <Star size={14} fill="#f59e0b" color="#f59e0b" />
+          <Star size={14} fill="#f59e0b" color="#f59e0b" />
+          <Star size={14} fill="#f59e0b" color="#f59e0b" />
+          <Star size={14} fill="#f59e0b" color="#f59e0b" />
+          <Star size={14} fill="#f59e0b" color="#f59e0b" />
           4.9(196)
         </div>
       </div>
       <div className="ml-8 pt-7">
         <InputBasic />
+
+
       </div>
     </nav>
   );

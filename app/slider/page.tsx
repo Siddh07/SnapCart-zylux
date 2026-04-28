@@ -1,16 +1,15 @@
-"use client"
+"use client";
 
-import Autoplay from "embla-carousel-autoplay"
-import Image from "next/image"
-import * as React from "react"
+import Autoplay from "embla-carousel-autoplay";
+import Image from "next/image";
+import * as React from "react";
 
-import { CardContent } from "@/components/ui/card"
+import { CardContent } from "@/components/ui/card";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem
-} from "@/components/ui/carousel"
-
+  CarouselItem,
+} from "@/components/ui/carousel";
 
 const slides = [
   {
@@ -25,26 +24,29 @@ const slides = [
   },
 ];
 
-
 export function CarouselDemo() {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
-  )
+    Autoplay({ delay: 2000, stopOnInteraction: true }),
+  );
 
   return (
     <Carousel
       plugins={[plugin.current]}
-      className="relative  w-[550px] mx-11"
+      className="relative  w-[440px] mx-3"
       onMouseEnter={plugin.current.stop}
       onMouseLeave={plugin.current.reset}
     >
-      <CarouselContent >
-{slides.map((slide, index) => (
+      <CarouselContent>
+        {slides.map((slide, index) => (
           <CarouselItem key={index}>
             <div className="">
-       
-                <CardContent className="flex items-center   relative h-[300px] rounded-2xl overflow-hidden      "> 
-               <Image src={slide.image} alt={`Slide ${index + 1}`} fill className=" object-cover rounded-md" />
+              <CardContent className="flex items-center   relative h-[300px] rounded-2xl overflow-hidden      ">
+                <Image
+                  src={slide.image}
+                  alt={`Slide ${index + 1}`}
+                  fill
+                  className=" object-cover rounded-md"
+                />
                 <div className="  pl-8 pt-25   absolute top-0 left-0 w-full h-full flex flex-col   text-white">
                   <h1 className="text-2xl font-bold">{slide.texth1}</h1>
                   <p className="text-lg mt-2">{slide.texth2}</p>
@@ -52,17 +54,14 @@ export function CarouselDemo() {
                     Shop Now
                   </button>
                 </div>
-                </CardContent>
-           
+              </CardContent>
             </div>
           </CarouselItem>
         ))}
       </CarouselContent>
 
-
       {/* <CarouselPrevious />
       <CarouselNext /> */}
-
     </Carousel>
-  )
+  );
 }

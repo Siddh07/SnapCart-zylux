@@ -31,12 +31,11 @@ export const products: Product[] = [
     price: 2.99,
     originalPrice: 4.99,
     discount: 40,
-    image: "/test.jpg",
+    image: "/test2.jpg",
     category: "Fruits & Vegetables",
     slug: "fresh-bananas",
     rating: 3.7,
     sold: 24,
-
   },
 
   {
@@ -44,20 +43,19 @@ export const products: Product[] = [
     price: 2.99,
     originalPrice: 4.99,
     discount: 40,
-    image: "/test.jpg",
+    image: "/test3.jpg",
     category: "Fruits & Vegetables",
     slug: "dark-chocolate-bar",
     rating: 3.7,
     sold: 24,
   },
 
-
   {
     name: "Mixed Nuts Premium",
     price: 2.99,
     originalPrice: 4.99,
     discount: 40,
-    image: "/test.jpg",
+    image: "/test4.jpg",
     category: "Fruits & Vegetables",
     slug: "mixed-nuts-premium",
     rating: 3.7,
