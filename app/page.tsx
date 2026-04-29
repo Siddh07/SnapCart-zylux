@@ -1,25 +1,24 @@
 import { ChevronRight } from "lucide-react";
 import { LatestArticles } from "./article/page";
 import Brand from "./brands/page";
-import { Nav } from "./nav/page";
+import ContactCard from "./folder/page";
 import { CategoriesGrid } from "./product-categories/page";
 import { ProductGrid, products } from "./products/page";
 import { CarouselPlugin } from './review/page';
 import { CarouselDemo } from "./slider/page";
-import { StickyNav } from "./stickyNav/page";
 
 
 export default function Home() {
   return (
     <div className="relative min-h-screen">
-      <Nav />
+     
 
       <div className="p-4">
         <section>
           <CarouselDemo />
         </section>
 
-        {/* Categories */}
+   
         <section className="py-8 container mx-auto">
           <h2
             className="text-[20px] leading-6 tracking-normal
@@ -28,11 +27,11 @@ export default function Home() {
             Shop by Category
           </h2>
 
-          {/*  category cards  */}
+      
           <CategoriesGrid />
         </section>
 
-        {/* Products */}
+     
         <section className="py-8 container mx-auto">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-[20px] leading-6 tracking-normal  ">
@@ -43,7 +42,6 @@ export default function Home() {
               {" "}
               View All <ChevronRight />{" "}
             </h1>
-            {/*  product grid */}
           </div>
           <div className="h-4" />
           <ProductGrid products={products} />
@@ -51,15 +49,16 @@ export default function Home() {
 
 
   <Brand />
-  <CarouselPlugin />
+ 
 
 <LatestArticles />
 
 
       </div>
 
-    
-      <StickyNav />
+     <CarouselPlugin />
+<ContactCard />
+
 
     </div>
   );

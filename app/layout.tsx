@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
+import { Nav } from "./nav/page";
+import { StickyNav } from "./stickyNav/page";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -19,11 +21,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${roboto.variable} antialiased`}>
-<body className="min-h-screen flex flex-col">
-  <main className="mx-auto w-full max-w-[490px] bg-[#f5f5f5] min-h-screen relative flex flex-col">
-    {children}
-  </main>
-</body>
+      <body className="min-h-screen flex flex-col bg-[#d8d8d8]">
+        <main className="mx-auto w-full max-w-[490px] bg-[#f5f5f5] min-h-screen relative flex flex-col shadow-md">
+         <Nav />
+          {children}
+          <StickyNav />
+        </main>
+      </body>
     </html>
   );
 }

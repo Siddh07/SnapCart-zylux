@@ -1,25 +1,46 @@
-import { House, Search, ShoppingBag, SquareDashed, User } from 'lucide-react';
-import Link from 'next/link';
+"use client";
 
+import { House, Search, ShoppingBag, SquareDashed, User } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const navItems = [
+  { href: "/", icon: House, label: "House" },
+  { href: "/categorypage", icon: SquareDashed, label: "SquareDashed" },
+
+  { href: "/searchPage", icon: Search, label: "search" },
+  { href: "/cart", icon: ShoppingBag, label: "ShoppingBag" },
+
+  { href: "/profile", icon: User, label: "User" },
+];
 
 export function StickyNav() {
+  const pathname = usePathname();
+
   return (
-    <div className="sticky bottom-0 z-50 bg-white text-gray-500 w-full shadow-[0_-1px_4px_rgba(0,0,0,0.08)]">
-      <span className="flex flex-row justify-around w-full px-6 py-3">
-      
-        <House size={24} className="text-[#da7041] cursor-pointer" />
-  
-        <SquareDashed size={24} className="hover:text-[#da7041] cursor-pointer" />
-        <Search size={24} className="hover:text-[#da7041] cursor-pointer" />
-  <ShoppingBag size={24} className="hover:text-[#da7041] cursor-pointer" />
-   
-
-
-  <Link href="/profile" >
-  <User size={24} className="hover:text-[#da7041] cursor-pointer" />
-  </Link>
-        
-      </span>
-    </div>
+    <nav className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[490px] bg-white z-50 shadow-lg border-t border-gray-100">
+      <div className="flex items-center justify-around py-2">
+        {navItems.map(({ href, icon: Icon, label }) => {
+          const isActive = pathname === href;
+          return (
+            <Link
+              key={href}
+              href={href}
+              className="flex flex-col items-center gap-1 px-3 py-1"
+            >
+              <Icon
+                size={22}
+                className={isActive ? "text-[#ce4002]" : "text-gray-400"}
+              />
+              <span
+                className={`text-[10px] ${isActive ? "text-[#ce4002] font-medium" : "text-gray-400"}`}
+              >
+                {label}
+              </span>
+            </Link>
+          );
+        })}
+      </div>
+    </nav>
   );
 }

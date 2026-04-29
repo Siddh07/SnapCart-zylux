@@ -50,7 +50,7 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
+  --background: #d8d8d8;  
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
@@ -130,6 +130,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-color: #e5e5e5;  
+    
   }
   html {
     @apply font-sans;

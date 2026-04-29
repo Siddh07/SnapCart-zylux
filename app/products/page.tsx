@@ -67,7 +67,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/product/${product.slug}`}
-      className="group relative flex flex-col items-center justify-center rounded-lg border bg-white p-4 transition-all hover:border-red-500 hover:shadow-lg"
+      className="group relative flex flex-col items-center justify-center rounded-lg border bg-white p-4 transition-all hover:border-red-500 hover:shadow-lg   min-h-[320px] "
     >
       <div className="absolute  top-0 right-0 flex items-center gap-1">
         {product.discount && (
@@ -87,9 +87,14 @@ export function ProductCard({ product }: { product: Product }) {
         />
       )}
 
-      <span className="text-[13]px font-normal text-[#1A1A1A] group-hover:text-red-500 mr-auto">
-        {product.name}
-      </span>
+
+
+
+
+
+<span className="font-thin text-[#1A1A1A] group-hover:text-red-500 mr-auto">
+  {product.name}
+</span>
 
       <div className="mt-2 flex w-full items-center justify-between">
         <div className="flex items-center gap-2">
@@ -114,7 +119,9 @@ export function ProductCard({ product }: { product: Product }) {
           <span>({product.sold} sold) </span>
         </div>
       )}
+    
     </Link>
+    
   );
 }
 
